@@ -1,10 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_postorder - lista
+ * binary_tree_height - lista
  * @tree: ptr
- * @func: ptr
- * Return: void
+ * Return: altura
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
@@ -12,13 +11,18 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 	if (tree == NULL)
 	{
-		return(0);
+		return (0);
 	}
 
-	binary_tree_height(tree->left);
-	binary_tree_height(tree->right);
+	alt_left = binary_tree_height(tree->left);
+	alt_right = binary_tree_height(tree->right);
 
-	for (alt_left = 0; )
+	if (alt_left > alt_right)
 	{
+		return (alt_left + 1);
+	}
+	else
+	{
+		return (alt_right + 1);
 	}
 }
