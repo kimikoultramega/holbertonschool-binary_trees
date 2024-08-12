@@ -5,9 +5,10 @@
  * @tree: ptr
  * Return: altura
  */
-size_t binary_tree_height(const binary_tree_t *tree)
-{
-	size_t alt_left, alt_right;
+size_t binary_tree_height(const binary_tree_t *tree)	
+{	
+	size_t alt_left = 0;
+	size_t alt_right = 0;
 
 	if (tree == NULL)
 	{
@@ -17,12 +18,5 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	alt_left = binary_tree_height(tree->left);
 	alt_right = binary_tree_height(tree->right);
 
-	if (alt_left > alt_right)
-	{
-		return (alt_left + 1);
-	}
-	else
-	{
-		return (alt_right + 1);
-	}
+	return (alt_left > alt_right ? alt_left : alt_right);
 }
