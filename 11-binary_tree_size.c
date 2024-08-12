@@ -1,9 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * binary_tree_size - lista
+ * @tree: puntero
+ * Return: size
  */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
@@ -19,5 +19,4 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	s_total = s_left + s_right;
 
 	return (s_total + 1);
-
 }
